@@ -23,11 +23,13 @@ def create_app(test_config=None):
         os.makedirs(app.instance_path)
     except OSError:
         pass
-
-    # a simple page that says hello
-    @app.route('/nahi')
-    def hello():
-        return 'que linda tarde'
     
+    from . import db
+    db.init_app(app)
+
+    from . import musica
+    app.register_blueprint(musica.bp)
+    app.add_url_rule('/', endpoint='index')
 
     return app
+  

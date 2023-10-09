@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block header %}
+<h1>{% block title %}--------{% endblock %}</h1>
+{% endblock %} {% block content %} {% for can in cancion %}
+<article class="post">
+  <header>
+    <div>
+      <h1>{{ can['Cancion'] }}</h1>
+      <div class="about">Artista: {{ can['Artista'] }}</div>
+    </div>
+  </header>
+</article>
+{% endfor %} {% endblock %}

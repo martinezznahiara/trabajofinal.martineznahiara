@@ -6,9 +6,9 @@ from werkzeug.exceptions import abort
 
 from nahi.db import get_db
 
-bp = Blueprint('blog', __name__)
+bp = Blueprint('musica', __name__)
 
-@bp.route('/')
+@bp.route("/cancion")
 def index():
     db = get_db()
     cancion = db.execute(

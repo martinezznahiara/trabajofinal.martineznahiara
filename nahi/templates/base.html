@@ -1,15 +1,28 @@
-<!DOCTYPE html>
-<title>{% block title %}{% endblock %} - --------</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
-<nav>
-  <h1>cancionesmartz</h1>
-  <ul></ul>
-</nav>
-<section class="content">
-  <header>
-    {% block header %}{% endblock %}
-
-    <a href="{{ url_for('album.index') }}"></a>
   </header>
-  {% block content %}{% endblock %}
+  <!DOCTYPE html>
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+  {% block header %}
+  <header>
+    <h1>{% block title %}Música{% endblock %}</h1>
+  </header>
+  {% endblock %} {% block content %}
+  <article class="contenido">
+    <body>
+      <div>
+        <h3>
+          <a class="links" href="{{ url_for('musica.index') }}"
+            >Canciones</a
+          >
+        </h3>
+        <h3>
+          <a class="links" href="{{ url_for('artista.index') }}">Artistas</a>
+        </h3>
+        <h3>
+          <a class="links" href="{{ url_for('album.index') }}">album</a>
+        </h3>
+
+      </div>
+    </body>
+  </article>
+  {% endblock %}
 </section>

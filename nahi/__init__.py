@@ -38,6 +38,10 @@ def create_app(test_config=None):
     from . import album
     app.register_blueprint(album.bp)
     app.add_url_rule('/', endpoint='index')
+
+    from . import artista
+    app.register_blueprint(artista.bp)
+    app.add_url_rule('/', endpoint='index')
     
     
     return app
